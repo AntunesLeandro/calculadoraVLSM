@@ -64,7 +64,7 @@ public class FramePrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblInformeOIp = new JLabel("Informe o Ip");
+		JLabel lblInformeOIp = new JLabel("Informe o IP Inicial");
 		lblInformeOIp.setBounds(10, 14, 78, 14);
 		contentPane.add(lblInformeOIp);
 
@@ -96,8 +96,9 @@ public class FramePrincipal extends JFrame {
 				}
 				for (int x = 0; x < qtdRedesInteger; x++) {
 					try {
+						Integer y = x+1;
 						arrayComOsHosts.add(
-								Integer.parseInt(JOptionPane.showInputDialog("Quantidade de Hosts para esta Rede")));
+								Integer.parseInt(JOptionPane.showInputDialog("Quantidade de Hosts para a " + y + " rede")));
 					} catch (Exception e2) {
 						JOptionPane.showMessageDialog(null, "Caracter inválido!");						
 						return;
@@ -268,7 +269,7 @@ public class FramePrincipal extends JFrame {
 
 				String id = aux[0] + "." + bits.toString();
 				String idFormatado[] = devolverIpFormatoTela(id, contador);
-				txtTela.append("REDE COM " + String.valueOf(qtdHost) + "\n");
+				txtTela.append("REDE COM: " + String.valueOf(qtdHost) + "\n");
 				txtTela.append("ID: " + idFormatado[1] + "\n");
 				txtTela.append(idFormatado[0] + "\n");
 
