@@ -20,14 +20,13 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JSeparator;
 
 public class FramePrincipal extends JFrame {
 
 	/**
-	 * 
-	 *///
+	 * @author Leandro Antunes
+	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
@@ -118,7 +117,7 @@ public class FramePrincipal extends JFrame {
 				}
 				txtTela.append("Rede: " + sb.toString() + "\n");
 				String classe = null;
-				if (Integer.parseInt(octetos[0]) >= 1 && Integer.parseInt(octetos[0]) <= 127) {
+				if (Integer.parseInt(octetos[0]) >= 1 && Integer.parseInt(octetos[0]) <= 127) { //CLASSE A
 					mascaraPadraoBinario = "11111111.00000000.00000000.00000000";
 					txtTela.append("Mascara Padrão: " + mascaraPadraoBinario + "\n");
 					if (somaHosts > Math.pow(2, 24)) {
@@ -126,7 +125,7 @@ public class FramePrincipal extends JFrame {
 						return;
 					}
 					classe = "A";
-				} else if (Integer.parseInt(octetos[0]) >= 128 && Integer.parseInt(octetos[0]) <= 191) {
+				} else if (Integer.parseInt(octetos[0]) >= 128 && Integer.parseInt(octetos[0]) <= 191) { //CLASSE B
 					mascaraPadraoBinario = "11111111.11111111.00000000.00000000";
 					txtTela.append("Mascara Padrão: " + mascaraPadraoBinario + "\n");
 					if (somaHosts > Math.pow(2, 16)) {
@@ -134,7 +133,7 @@ public class FramePrincipal extends JFrame {
 						return;
 					}
 					classe = "B";
-				} else if (Integer.parseInt(octetos[0]) >= 192 && Integer.parseInt(octetos[0]) <= 223) {
+				} else if (Integer.parseInt(octetos[0]) >= 192 && Integer.parseInt(octetos[0]) <= 223) { //CLASSE C
 					mascaraPadraoBinario = "11111111.11111111.11111111.00000000";
 					txtTela.append("Mascara Padrão: " + mascaraPadraoBinario + "\n");
 					if (somaHosts > Math.pow(2, 8)) {
